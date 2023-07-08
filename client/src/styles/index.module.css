@@ -6,12 +6,10 @@
     font-family: "Poppins";
     font-weight: 900;
     text-decoration: none;
-    transition: .2s;
 }
 
 body {
     background-image: repeating-linear-gradient(45deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(0deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 1px,transparent 1px, transparent 11px,rgba(255,255,255, 0.05) 11px, rgba(255,255,255, 0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
-    animation: 1s movebg infinite alternate;
 }
 
 .App {

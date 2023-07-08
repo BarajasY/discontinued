@@ -68,6 +68,7 @@
     padding: 10px 20px;
     border: 2px solid var(--silver);
     font-size: 20px;
+    cursor: pointer;
 }
 
 .homeApiDocContent section a:hover {
@@ -87,6 +88,8 @@
     font-size: 20px;
     padding: 10px 20px;
     border: 2px solid var(--clearblue);
+    transition: .2s;
+    cursor: pointer;
 }
 
 .homeApiDocContainer section a:hover {
