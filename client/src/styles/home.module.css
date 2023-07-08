@@ -1,18 +1,95 @@
 .homeContainer {
     width: 100%;
+}
+
+.homeMain {
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.homeContainer h1 {
+.homeMain h1 {
     color: white;
     border: 3px solid white;
     padding: 20px;
     border-radius: 10px;
 }
 
-.homeContainer h1 span {
+.homeMain h1 span {
     color: var(--darkred);
+}
+
+.homeApiDoc {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeApiDocContainer {
+    width: 60%;
+    height: 50%;
+    background: rgb(10, 10, 10);
+    border: 2px solid white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homeApiDocContainer h1 {
+    color: white;
+}
+
+.homeApiDocContent {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.homeApiDocContent section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.homeApiDocContent section h1 {
+    color: var(--cyan);
+}
+
+.homeApiDocContent section a {
+    color: var(--silver);
+    padding: 10px 20px;
+    border: 2px solid var(--silver);
+    font-size: 20px;
+}
+
+.homeApiDocContent section a:hover {
+    color: black;
+    background: var(--silver);
+}
+
+.homeApiDocContainer section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.homeApiDocContainer section a {
+    color: var(--clearblue);
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid var(--clearblue);
+}
+
+.homeApiDocContainer section a:hover {
+    color: black;
+    background: var(--clearblue);
 }

@@ -5,6 +5,8 @@
     box-sizing: border-box;
     font-family: "Poppins";
     font-weight: 900;
+    text-decoration: none;
+    transition: .2s;
 }
 
 body {
@@ -19,4 +21,20 @@ body {
 :root {
     --cleargray: #9bbfb6;
     --darkred: #d44136;
+    --blue: #2e6feb;
+    --cyan:#00ebb9;
+    --silver: #b1b7c2;
+    --clearblue: #78c0d7;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--darkred);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cleargray);
 }
