@@ -1,4 +1,4 @@
-use axum::{http::StatusCode, extract::{State, Json}};
+use axum::{http::StatusCode, extract::{State, Json, Path}};
 use serde::{Serialize, Deserialize};
 use surrealdb::{sql::Thing, Surreal, engine::remote::ws::Client};
 
@@ -48,3 +48,9 @@ pub async fn get_cars(State(db): State<Surreal<Client>>) -> (StatusCode, Json<Ve
     let cars:Vec<Car> = db.select("cars").await.unwrap();
     (StatusCode::OK, Json(cars))
 }
+
+pub async fn get_cars_by_year(State(db): State<Surreal<Client>>, Path(year): Path<u64>) -> (StatusCode, Json<Vec<Car>>) {
+    let mut cars:surrealdb::Response = db.query("SELECT * FROM cars WHERE year = type::table($year)").bind(("year", year)).await.unwrap();
+    (StatusCode::OK, Json(cars.take(1).unwrap()))
+}
+
