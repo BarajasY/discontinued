@@ -49,8 +49,16 @@ pub async fn get_cars(State(db): State<Surreal<Client>>) -> (StatusCode, Json<Ve
     (StatusCode::OK, Json(cars))
 }
 
-pub async fn get_cars_by_year(State(db): State<Surreal<Client>>, Path(year): Path<u64>) -> (StatusCode, Json<Vec<Car>>) {
-    let mut cars:surrealdb::Response = db.query("SELECT * FROM cars WHERE year = type::table($year)").bind(("year", year)).await.unwrap();
-    (StatusCode::OK, Json(cars.take(1).unwrap()))
+pub async fn get_cars_by_year(State(db): State<Surreal<Client>>, Path(year): Path<String>) -> (StatusCode, Json<Vec<Car>>) {
+    println!("{}", year);
+    let mut cars = db.query("SELECT * FROM cars WHERE year = type::table($year)").bind(("year", year)).await.unwrap();
+    (StatusCode::OK, Json(cars.take(0).unwrap()))
 }
 
+pub async fn get_cars_by_make(State(db): State<Surreal<Client>>, Path(make): Path<String>) -> (StatusCode, Json<Vec<Car>>) {
+    let mut s = make.to_string();
+    let capitalized_make = s.remove(0).to_uppercase().to_string() + &s;
+
+    let mut cars= db.query("SELECT * FROM cars WHERE make = type::table($make)").bind(("make", capitalized_make)).await.unwrap();
+    (StatusCode::OK, Json(cars.take(0).unwrap()))
+}

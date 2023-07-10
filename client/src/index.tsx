@@ -20,16 +20,16 @@ const queryclient = new QueryClient();
 
 render(
   () => (
-        <QueryClientProvider client={queryclient}>
-    <Router>
-      <Routes>
+    <QueryClientProvider client={queryclient}>
+      <Router>
+        <Routes>
           <Route path="/" component={Home} />
           <Route path="/year" component={Year} />
           <Route path="/make" component={Make} />
           <Route path="/all" component={All} />
-      </Routes>
-    </Router>
-        </QueryClientProvider>
+        </Routes>
+      </Router>
+    </QueryClientProvider>
   ),
   root!
 );
