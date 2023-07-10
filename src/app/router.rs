@@ -13,7 +13,7 @@ pub async fn get_router() -> Router {
     .route("/cars", post(create_car).get(get_cars))
     .route("/cars/year/:year", get(get_cars_by_year))
     .route("/cars/make/:make", get(get_cars_by_make))
-    .with_state(connection)
     .layer(make_cors())
+    .with_state(connection)
 
 }
