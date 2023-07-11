@@ -9,3 +9,5 @@ it didn't really work for me since the errors that Actix sometimes reported wher
 Secondly, the frontend framework of choice was Solid.js, this is because i simply wanted to try out one of the newer frameworks with notable inventions. So i came up with Solid.js.
 Finally, the database, this project works with SurrealDB, a rust-based database, i honestly did liked the implementations it has, the downfall of this database is that, since it's pretty new, there's not much documentation regarding it (in comparison with the giants PSQL, MYSQL...)
 so, once you choose it you pretty much have to figure your way in. But once you figure it out it works so smoothly...
+### Results
+This project was a major technological feat for me, specially for the Rust part, since it's a complex language that needs enough attention to succeed. The good news was that the documentation for the Axum framework was very detailed and most of it was covered. The only major challenge was the setup of SurrealDB for reasons already stated.
