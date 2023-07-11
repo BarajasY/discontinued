@@ -1,0 +1,40 @@
+.makeContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.makeContainer h1 {
+    color: var(--darkred);
+}
+
+.makeContainer h1 span {
+    color: var(--clearblue);
+}
+
+.make {
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.make a {
+    color: var(--cyan);
+    text-align: center;
+    margin: 5px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.make a:hover {
+    border: 2px solid var(--cyan);
+    color: var(--blue);
+    transition: .2s;
+    cursor: pointer;
+    user-select: none;
+}

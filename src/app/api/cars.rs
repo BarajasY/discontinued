@@ -22,6 +22,11 @@ pub struct TestCar {
     reference: String
 }
 
+#[derive(Serialize, Deserialize, Debug)]
+pub struct Make {
+    make:String
+}
+
 #[derive(Deserialize, Serialize)]
 pub struct CreateCar {
     name: String,
@@ -81,9 +86,12 @@ pub async fn get_cars_by_make(
     .bind(("make", capitalized_make))
     .await
     .unwrap();
-dbg!(&cars);
+
+    dbg!(&cars);
+
 (StatusCode::OK, Json(cars.take(0).unwrap()))
 }
+
 
 pub async fn get_cars_by_year(
     State(db): State<Surreal<Client>>,
@@ -98,4 +106,11 @@ pub async fn get_cars_by_year(
         .unwrap();
 
     (StatusCode::OK, Json(cars.take(0).unwrap()))
+}
+
+pub async fn get_makes(State(db): State<Surreal<Client>>) -> (StatusCode, Json<Vec<Make>>) {
+    let sqlquery = String::from("select make from cars");
+    let mut makes = db.query(sqlquery).await.unwrap();
+
+    (StatusCode::OK, Json(makes.take(0).unwrap()))
 }

@@ -4,3 +4,7 @@ export type CarType = {
     year: number,
     make: string
 }
+
+export type MakeType = {
+    make: string
+}

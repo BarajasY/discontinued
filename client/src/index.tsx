@@ -1,12 +1,15 @@
 /* @refresh reload */
+import {lazy } from "solid-js";
 import { render } from "solid-js/web";
 import { Router, Routes, Route } from "@solidjs/router";
 import { QueryClientProvider, QueryClient } from "@tanstack/solid-query";
 import "./styles/index.module.css";
-import Home from "./components/Home";
-import Year from "./components/Year";
-import All from "./components/All";
-import Make from "./components/Make";
+import MakeResult from "./components/MakeResult";
+const Home = lazy(() => import("./components/Home"))
+const Year = lazy(() => import("./components/Year"))
+const All = lazy(() => import("./components/All"))
+const Make = lazy(() => import("./components/Make"))
+const YearResult = lazy(() => import("./components/YearResult"))
 
 const root = document.getElementById("root");
 
@@ -25,7 +28,9 @@ render(
         <Routes>
           <Route path="/" component={Home} />
           <Route path="/year" component={Year} />
+          <Route path="/year/:year" component={YearResult} />
           <Route path="/make" component={Make} />
+          <Route path="/make/:make" component={MakeResult} />
           <Route path="/all" component={All} />
         </Routes>
       </Router>

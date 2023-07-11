@@ -23,6 +23,7 @@ body {
     --cyan:#00ebb9;
     --silver: #b1b7c2;
     --clearblue: #78c0d7;
+    --black: rgba(30,30,30, .5);
 }
 
 ::-webkit-scrollbar {

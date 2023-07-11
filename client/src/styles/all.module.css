@@ -11,6 +11,32 @@
     color: white;
 }
 
+.allContainer h1 span {
+    color: var(--darkred);
+}
+
+.allWords {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.allWords h1 {
+    margin: 0px 10px;
+}
+
+.icon {
+    font-size: 30px;
+    color: var(--cyan);
+    transition: .2s;
+}
+
+.icon:hover {
+    color: var(--darkred);
+    cursor: pointer;
+}
+
 .tableColumns {
     display: flex;
     width: 80%;
